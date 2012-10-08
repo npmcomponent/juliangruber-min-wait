@@ -1,14 +1,17 @@
 var Stream = require('stream');
 
-module.exports = wait;
+module.exports = function(opts) {
+  if (typeof opts == 'number') opts = { ms: opts };
+  return wait(opts);
+};
 
 /**
- * Creates a through stream that buffers data for at least x ms
+ * Creates a through stream that buffers data for at least opts.ms
  *
- * @param   {number} delay
+ * @param   {opts}
  * @returns {Stream}
  */
-function wait(delay) {
+function wait(opts) {
   var s = new Stream;
   s.readable = s.writable = true;
   
@@ -19,11 +22,11 @@ function wait(delay) {
     buffer = merge(buffer, data);
     clearTimeout(timeOut);
 
-    if (mul(data)) return s.emit('data', buffer);
+    if (!opts.equal && mul(data)) return s.emit('data', buffer);
 
     timeOut = setTimeout(function() {
       s.emit('data', buffer);
-    }, delay);
+    }, opts.ms);
   }
   return s;
 }

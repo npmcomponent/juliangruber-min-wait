@@ -1,7 +1,7 @@
 {
   "name": "min-wait",
   "repo": "juliangruber/min-wait",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Through stream that buffers data for at least x milliseconds",
   "scripts": ["index.js"],
   "dependencies": {

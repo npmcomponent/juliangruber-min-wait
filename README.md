@@ -7,13 +7,13 @@ them merged together.
 Useful if you let your users filter data results and only want to start an api
 request when the user hasn't done anything for 500ms.
 
-Objects with multiple keys immediately trigger a flush because such interactions
-come from code, not people. Try clicking two checkboxes at once ;)
+Objects with multiple keys immediately trigger a flush because such
+interactions come from code, not people. Try clicking two checkboxes at once ;)
 
 ## Usage
 
 ```javascript
-var wait = require('min-wait');
+var Wait = require('min-wait');
 
 src.pipe(wait(500)).pipe(dest);
 
@@ -42,9 +42,16 @@ $ component install juliangruber/min-wait
 
 ## API
 
-### wait(ms)
+### wait(opts)
 
-Returns a through stream that buffers data for at least `ms`.
+Returns a through stream that buffers data for at least `opts.ms`.
+
+Possible values for `opts`:
+
+* `ms`: Time to wait at minimum
+* `equal`: Treat all input equally and also buffer multi-key objects
+
+If `opts` is a __Number__ it is treated as `opts.ms`.
 
 ## License
 

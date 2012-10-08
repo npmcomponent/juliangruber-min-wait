@@ -1,13 +1,14 @@
 {
   "name": "min-wait",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Through stream that buffers data for at least x milliseconds",
   "main": "index.js",
   "devDependencies": {
-    "difflet": "*"
+    "difflet": "*",
+    "mocha": "*"
   },
   "scripts": {
-    "test": "node test/single.js && node test/multi.js"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
