@@ -10,19 +10,17 @@ module.exports = wait;
  */
 function wait(delay) {
   var s = new Stream;
-  s.readable = true;
-  s.writable = true;
+  s.readable = s.writable = true;
   
   var timeOut;
   var buffer = {};
 
   s.write = function(data) {
     buffer = merge(buffer, data);
-    if (mul(data)) {
-      clearTimeout(timeOut);
-      return s.emit('data', buffer);
-    }
     clearTimeout(timeOut);
+
+    if (mul(data)) return s.emit('data', buffer);
+
     timeOut = setTimeout(function() {
       s.emit('data', buffer);
     }, delay);
