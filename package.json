@@ -1,0 +1,25 @@
+{
+  "name": "min-wait",
+  "version": "0.0.1",
+  "description": "Through stream that buffers data for at least x milliseconds",
+  "main": "index.js",
+  "devDependencies": {
+    "difflet": "*"
+  },
+  "scripts": {
+    "test": "node test/single.js && node test/multi.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:juliangruber/min-wait.git"
+  },
+  "keywords": [
+    "stream",
+    "buffer",
+    "queue",
+    "through",
+    "wait"
+  ],
+  "author": "Julian Gruber <julian@juliangruber.com>",
+  "license": "MIT"
+}
