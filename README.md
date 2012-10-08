@@ -17,8 +17,19 @@ var wait = require('min-wait');
 
 src.pipe(wait(500)).pipe(dest);
 
-src.emit('data', {foo: 'bar'});             // has to wait
-src.emit('data', {foo: 'bar', bar: 'baz'}); // flush
+src.emit('data', {one: 'one'});             // has to wait
+src.emit('data', {two: 'two'});             // has to wait
+src.emit('data', {one: 'foo', bar: 'baz'}); // flush
+```
+
+`dest` receives:
+
+```javascript
+{
+  one: 'foo',
+  two: 'two',
+  bar: 'baz'
+}
 ```
 
 ## Installation
