@@ -1,4 +1,3 @@
-
 # min-wait
 
 Through stream that buffers input objects for at least `x ms` until it emits
@@ -9,6 +8,8 @@ request when the user hasn't done anything for 500ms.
 
 Objects with multiple keys immediately trigger a flush because such
 interactions come from code, not people. Try clicking two checkboxes at once ;)
+
+[![Build Status](https://travis-ci.org/juliangruber/min-wait.png)](https://travis-ci.org/juliangruber/min-wait)
 
 ## Usage
 
