@@ -1,19 +1,7 @@
 {
-  "name": "min-wait",
-  "version": "0.1.0",
+  "name": "juliangruber-min-wait",
   "description": "Through stream that buffers data for at least x milliseconds",
-  "main": "index.js",
-  "devDependencies": {
-    "difflet": "*",
-    "mocha": "*"
-  },
-  "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:juliangruber/min-wait.git"
-  },
+  "version": "0.1.0",
   "keywords": [
     "stream",
     "buffer",
@@ -21,6 +9,8 @@
     "through",
     "wait"
   ],
-  "author": "Julian Gruber <julian@juliangruber.com>",
+  "dependencies": {
+    "juliangruber-stream": "git://github.com/npmcomponent/juliangruber-stream.git"
+  },
   "license": "MIT"
 }

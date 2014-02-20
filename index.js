@@ -1,4 +1,4 @@
-var Stream = require('stream');
+var Stream = require('juliangruber-stream');
 
 module.exports = function(opts) {
   if (typeof opts == 'number') opts = { ms: opts };
